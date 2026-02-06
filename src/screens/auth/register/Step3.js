@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#eef3ff",
     padding: 15,
+    // marginTop:50,
   },
   card: {
     // backgroundColor: "#fff",
@@ -146,6 +147,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: "700",
+    marginTop:50,
   },
   subtitle: {
     color: "#777",

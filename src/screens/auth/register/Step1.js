@@ -22,6 +22,7 @@ export default function Step1({ navigation }) {
 
         <Text style={styles.label}>Name</Text>
         <TextInput
+        keyboardType="default"
         placeholder="Name"
         value={formData.Name}
         onChangeText={(text) => setFormData({ ...formData, Name: text })}
@@ -30,6 +31,7 @@ export default function Step1({ navigation }) {
 
         <Text style={styles.label}>Email</Text>
         <TextInput
+        keyboardType="email-address"
         placeholder="Email"
         value={formData.Email}
         onChangeText={(text) => setFormData({ ...formData, Email: text })}
@@ -55,6 +57,7 @@ export default function Step1({ navigation }) {
 
         <Text style={styles.label}>Phone Number</Text>
         <TextInput 
+        keyboardType="phone-pad"
         placeholder="Phone number"
         value={formData.Phone}
         onChangeText={(taxt) => setFormData({...formData, Phone: taxt})}
@@ -71,6 +74,7 @@ export default function Step1({ navigation }) {
 
       <Text style={styles.label}>Address</Text>
         <TextInput
+        // keyboardType=""
         placeholder="Address"
         value={formData.Address}
         onChangeText={(text) => setFormData({ ...formData, Address: text })}
@@ -112,6 +116,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#EEF2F6",
     justifyContent: "center",
+    // marginTop:50,
     // alignItems:'center',
     padding: 20,
   },
@@ -120,6 +125,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
     color: "#1F2937",
+    marginTop:50,
   },
   subtitle: {
     color: "#6B7280",
@@ -140,9 +146,10 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    color: "#374151",
+    fontWeight: "600",
     marginTop: 12,
     marginBottom: 6,
+    color: "#333",
   },
   input: {
     borderWidth: 1,

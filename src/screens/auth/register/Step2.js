@@ -15,7 +15,7 @@ import { useFormContext } from "../../../context/FormContext";
 
 export default function Step2({ navigation }) {
 
-  const {formData,setFormData}=useFormContext();
+  const { formData, setFormData } = useFormContext();
   // const [position, setPosition] = useState("");
   // const [company, setCompany] = useState("");
   // const [salary, setSalary] = useState("");
@@ -27,8 +27,8 @@ export default function Step2({ navigation }) {
 
   return (
     <ScrollView>
-    <View style={styles.container}>
-      
+      <View style={styles.container}>
+
         <Text style={styles.title}>Multi-step Registration</Text>
         <Text style={styles.subtitle}>Step 2 of 5</Text>
 
@@ -37,13 +37,17 @@ export default function Step2({ navigation }) {
           <View style={styles.progress} />
         </View>
 
-        <TextInput placeholder="Positin"
+        <Text style={styles.label}>Position</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Position"
           value={formData.Position}
-          onChangeText={(taxt)=>setFormData({...formData,Position:taxt})}
+          onChangeText={(text) => setFormData({ ...formData, Position: text })}
         />
 
+        <Text style={styles.label}>Company Name</Text>
         <View style={styles.pickerBox}>
-          <Picker selectedValue={formData.Company} onValueChange={(text)=>setFormData({...formData,Company:text})}>
+          <Picker selectedValue={formData.Company} onValueChange={(text) => setFormData({ ...formData, Company: text })}>
             <Picker.Item label="Select Company" value="" />
             <Picker.Item label="Google" value="google" />
             <Picker.Item label="Amazon" value="amazon" />
@@ -51,68 +55,74 @@ export default function Step2({ navigation }) {
           </Picker>
         </View>
 
+        <Text style={styles.label}>Salary</Text>
         <TextInput
           placeholder="Salary (optional)"
           style={styles.input}
           keyboardType="numeric"
           value={formData.Salary}
-          onChangeText={(text)=>setFormData({...formData,Salary:text})}
+          onChangeText={(text) => setFormData({ ...formData, Salary: text })}
         />
 
+        <Text style={styles.label}>Department</Text>
         <TextInput
           placeholder="Department"
           style={styles.input}
           value={formData.Department}
-          onChangeText={(text)=>setFormData({...formData,Department:text})}
+          onChangeText={(text) => setFormData({ ...formData, Department: text })}
         />
 
+        <Text style={styles.label}>Qualification</Text>
         <TextInput
           placeholder="Qualification"
           style={styles.input}
           value={formData.Qualification}
-          onChangeText={(text)=>setFormData({...formData,Qualification:text})}
+          onChangeText={(text) => setFormData({ ...formData, Qualification: text })}
         />
 
+        <Text style={styles.label}>Date of Joining</Text>
         <TextInput
           placeholder="Date of Joining"
           style={styles.input}
           value={formData.DateofJoining}
-          onChangeText={(text)=>setFormData({...formData,DateofJoining:text})}
+          onChangeText={(text) => setFormData({ ...formData, DateofJoining: text })}
 
         />
 
+        <Text style={styles.label}>Roles & Responsibilities</Text>
         <TextInput
           placeholder="Roles & Responsibilities"
           style={styles.input}
           value={formData.Roles}
-          onChangeText={(text)=>setFormData({...formData,Roles:text})}
+          onChangeText={(text) => setFormData({ ...formData, Roles: text })}
         />
 
+        <Text style={styles.label}>Skills</Text>
         <TextInput
           placeholder="Skills"
           style={styles.input}
           value={formData.Skills}
-          onChangeText={(text)=>setFormData({...formData, Skills: text})}
+          onChangeText={(text) => setFormData({ ...formData, Skills: text })}
         />
         <View style={styles.btncolumn}>
-        <View style={styles.btnRow}>
-          <TouchableOpacity
-            style={styles.backBtn}
-            onPress={() => navigation.goBack()}
-          >
-            <Text style={styles.backText}>‹ Back</Text>
-          </TouchableOpacity>
+          <View style={styles.btnRow}>
+            <TouchableOpacity
+              style={styles.backBtn}
+              onPress={() => navigation.goBack()}
+            >
+              <Text style={styles.backText}>‹ Back</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.nextBtn}
-            onPress={() => navigation.navigate("Register3")}
-          >
-            <Text style={styles.nextText}>Next ›</Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.nextBtn}
+              onPress={() => navigation.navigate("Register3")}
+            >
+              <Text style={styles.nextText}>Next ›</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
-      </ScrollView>
+    </ScrollView>
     // </View>
   );
 }
@@ -123,6 +133,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#EEF2F6",
     justifyContent: "center",
     padding: 20,
+    // marginTop:50,
   },
   card: {
     // backgroundColor: "#fff",
@@ -133,6 +144,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: "700",
+    marginTop: 50,
+  },
+  label: {
+    fontSize: 14,
+    fontWeight: "600",
+    marginTop: 12,
+    marginBottom: 6,
+    color: "#333",
   },
   subtitle: {
     color: "#888",
@@ -188,7 +207,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: "600",
   },
-  btncolumn:{
+  btncolumn: {
     // flexDirection:'column',
     // justifyContent:'flex-end',
   },

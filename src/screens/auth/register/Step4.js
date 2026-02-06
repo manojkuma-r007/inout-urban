@@ -87,6 +87,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#EEF3F9",
     // justifyContent: "center",
     padding: 20,
+    // marginTop:50,
+    height:"100%"
   },
   card: {
     // backgroundColor: "#fff",
@@ -97,6 +99,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: "700",
+    marginTop:50,
   },
   subtitle: {
     marginTop: 4,
